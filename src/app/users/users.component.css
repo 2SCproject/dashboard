@@ -1,0 +1,27 @@
+.nav-link[data-toggle].collapsed:before {
+    content: " ▾";
+}
+.nav-link[data-toggle]:not(.collapsed):before {
+    content: " ▴";
+}
+body{
+    background-color: #EBEBEB;
+    
+}
+.vrtc{
+     background-color: #CCC5B9;
+}
+img{
+    margin-left: 7%;
+    border-radius: 50%;
+}
+ul{
+    
+    margin-top: 20%;
+    margin-left: auto; 
+	margin-right: auto; 
+}
+a{
+    color: black;
+}
+
