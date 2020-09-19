@@ -41,20 +41,23 @@
                 </li>
                 </div>-->
                 <li class="nav-item"><a class="nav-link text-truncate" href="#" style="margin-top: 20px;"><i class="fa fa-download"></i> <span class="d-none d-sm-inline">Dashboard</span></a></li>
-            <li class="nav-item"><a class="nav-link text-truncate" href="#" style="margin-top: 20px;"><i class="fa fa-download"></i> <span class="d-none d-sm-inline">Ctalogue</span></a></li>
-            <li class="nav-item"><a class="nav-link text-truncate" routerLink="/orders"><i class="fa fa-bar-chart"></i> <span class="d-none d-sm-inline">Orders</span></a></li>
-            <li class="nav-item"><a class="nav-link text-truncate" routerLink="/users"><i class="fa fa-download"></i> <span class="d-none d-sm-inline">Users</span></a></li>
-            <li class="nav-item"><a class="nav-link text-truncate" href="#"><i class="fa fa-bar-chart"></i> <span class="d-none d-sm-inline">Settings</span></a></li>
-            <li class="nav-item"><a class="nav-link text-truncate" href="#"><i class="fa fa-download"></i> <span class="d-none d-sm-inline">Log out</span></a></li>
+          
+              
+                <li class="nav-item"><a class="nav-link text-truncate" href="#" style="margin-top: 5px;"><i class="fa fa-download"></i> <span class="d-none d-sm-inline">Ctalogue</span></a></li>
+                <li class="nav-item"><a class="nav-link text-truncate" href="#" style="margin-top: 5px;"><i class="fa fa-download"></i> <span class="d-none d-sm-inline">Inventory</span></a></li>
+                <li class="nav-item"><a class="nav-link text-truncate" routerLink="/orders" style="margin-top: 5px;"><i class="fa fa-bar-chart"></i> <span class="d-none d-sm-inline">Orders</span></a></li>
+            <li class="nav-item"><a class="nav-link text-truncate" routerLink="/users" style="margin-top: 5px;"><i class="fa fa-download"></i> <span class="d-none d-sm-inline">Users</span></a></li>
+            <li class="nav-item"><a class="nav-link text-truncate" href="#" style="margin-top: 5px;"><i class="fa fa-bar-chart"></i> <span class="d-none d-sm-inline">Settings</span></a></li>
+            <li class="nav-item"><a class="nav-link text-truncate" href="#" style="margin-top: 5px;"><i class="fa fa-download"></i> <span class="d-none d-sm-inline">Log out</span></a></li>
         </ul>
     </div>
-        <div class="col pt-2">
+        <div class="col-10 pt-2">
             <nav class="navbar navbar-expand-lg navbar-light ">
                 <form class="form-inline my-2 my-lg-0">
                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="background-color: transparent;border-color: black; width: 280px; margin-left:5%;">
                  </form>
                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                 <ul class="navbar-nav mr-auto" style="margin-left: 75%; margin-top: 0px;">
+                 <ul class="navbar-nav mr-auto" style="margin-left: 65%; margin-top: 0px;">
                    <li class="nav-item dropdown">
                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                        <i class="fa fa-bell"></i>
@@ -86,9 +89,9 @@
                </button>
              </nav>  
             
-                    <div class="row">
+                   
                         <div class="col-md-12">
-                            <div class="card">
+                            <div class="card" style="margin-top:20px ;">
                                 <div class="card-header">
                                     <strong class="card-title">Data Table</strong>
                                 </div>
@@ -96,12 +99,12 @@
                                     <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                         <thead>
                                             <tr>
-                                                <th>Id Order</th>
-                                                <th>User</th>
-                                                <th>Orderstatue </th>
-                                                <th>Price </th>
-                                                <th>DeliveryTime</th>
-                                                <th>edit</th>
+                                                <th scope="col">Id Order</th>
+                                                <th scope="col">User</th>
+                                                <th scope="col">Orderstatue </th>
+                                                <th scope="col">Price </th>
+                                                <th scope="col">DeliveryTime</th>
+                                                <th scope="col">edit</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -459,5 +462,5 @@
                         </div>
         </div>
     </div>
-    </div>
+  
 </div>

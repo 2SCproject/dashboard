@@ -40,15 +40,17 @@
                         </ul>
                     </li>
                     </div>-->
-                    <li class="nav-item"><a class="nav-link text-truncate" href="#" style="margin-top: 20px;"><i class="fa fa-download"></i> <span class="d-none d-sm-inline">Dashboard</span></a></li>
-                <li class="nav-item"><a class="nav-link text-truncate" href="#" style="margin-top: 20px;"><i class="fa fa-download"></i> <span class="d-none d-sm-inline">Ctalogue</span></a></li>
-                <li class="nav-item"><a class="nav-link text-truncate" routerLink="/orders"><i class="fa fa-bar-chart"></i> <span class="d-none d-sm-inline">Orders</span></a></li>
-                <li class="nav-item"><a class="nav-link text-truncate" routerLink="/users"><i class="fa fa-download"></i> <span class="d-none d-sm-inline">Users</span></a></li>
-                <li class="nav-item"><a class="nav-link text-truncate" href="#"><i class="fa fa-bar-chart"></i> <span class="d-none d-sm-inline">Settings</span></a></li>
-                <li class="nav-item"><a class="nav-link text-truncate" href="#"><i class="fa fa-download"></i> <span class="d-none d-sm-inline">Log out</span></a></li>
+                <li class="nav-item"><a class="nav-link text-truncate" href="#" style="margin-top: 20px;"><i class="fa fa-download"></i> <span class="d-none d-sm-inline">Dashboard</span></a></li>
+               
+                <li class="nav-item"><a class="nav-link text-truncate" href="#" style="margin-top: 5px;"><i class="fa fa-download"></i> <span class="d-none d-sm-inline">Ctalogue</span></a></li>
+                <li class="nav-item"><a class="nav-link text-truncate" href="#" style="margin-top: 5px;"><i class="fa fa-download"></i> <span class="d-none d-sm-inline">Inventory</span></a></li>
+                <li class="nav-item"><a class="nav-link text-truncate" routerLink="/orders" style="margin-top: 5px;"><i class="fa fa-bar-chart"></i> <span class="d-none d-sm-inline">Orders</span></a></li>
+                <li class="nav-item"><a class="nav-link text-truncate" routerLink="/users" style="margin-top: 5px;"><i class="fa fa-download"></i> <span class="d-none d-sm-inline">Users</span></a></li>
+                <li class="nav-item"><a class="nav-link text-truncate" href="#" style="margin-top: 5px;"><i class="fa fa-bar-chart"></i> <span class="d-none d-sm-inline">Settings</span></a></li>
+                <li class="nav-item"><a class="nav-link text-truncate" href="#" style="margin-top: 5px;"><i class="fa fa-download"></i> <span class="d-none d-sm-inline">Log out</span></a></li>
             </ul>
         </div>
-        <div class="col pt-2">
+        <div class="col-10 .col-md-8 pt-2" >
             <nav class="navbar navbar-expand-lg navbar-light ">
                 <form class="form-inline my-2 my-lg-0">
                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="background-color: transparent;border-color: black; width: 280px; margin-left:5%;">
@@ -86,9 +88,7 @@
                </button>
              </nav>  
             
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card">
+                            <div class="card" style="margin-top:20px ; width: 100%;">
                                 <div class="card-header">
                                     <strong class="card-title">Data Table</strong>
                                 </div>
@@ -99,8 +99,8 @@
                                                 <th>Username</th>
                                                 <th>Email</th>
                                                 <th>Adress</th>
-                                                <th>Managed</th>
                                                 <th>User State</th>
+                                                <th>Managed</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -108,10 +108,12 @@
                                                 <td>Tiger Nixon</td>
                                                 <td>System Architect</td>
                                                 <td>Edinburgh</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-danger">delete</button> 
-                                                </td>
                                                 <td> active</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-danger" style="margin-left: 5%;">delete</button> 
+                                                    <button type="button" class="btn btn-warning" style="margin-left: 5%;">banned</button>
+                                                </td>
+                                                
                                             </tr>
                                             <tr>
                                                 <td>Garrett Winters</td>
@@ -453,8 +455,8 @@
                                     </table>
                                 </div>
                             </div>
-                        </div>
-        </div>
+                        
+        
     </div>
     </div>
 </div>
