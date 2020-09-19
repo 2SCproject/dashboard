@@ -4,7 +4,7 @@ import {FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardModule } from './dashboard/dashboard.module';
-import { OrdersComponent } from './orders/orders.component';
+
 
 
 
@@ -12,7 +12,7 @@ import { OrdersComponent } from './orders/orders.component';
 @NgModule({
   declarations: [
     AppComponent,
-    OrdersComponent,
+    
    
   ],
   imports: [

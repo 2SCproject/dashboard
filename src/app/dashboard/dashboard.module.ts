@@ -5,6 +5,7 @@ import { DashboardRoutingModule } from '../dashboard/dashboard-routing.module';
 import {FormsModule} from '@angular/forms';
 import {DashboardComponent} from './dashboard.component';
 import { UsersComponent } from '../users/users.component';
+import { OrdersComponent } from '../orders/orders.component';
 
 
 
@@ -13,6 +14,7 @@ import { UsersComponent } from '../users/users.component';
   declarations: [
     DashboardComponent,
     UsersComponent,
+    OrdersComponent,
     
 
   ],
