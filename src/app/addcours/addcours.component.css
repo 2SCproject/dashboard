@@ -40,4 +40,9 @@ textarea{
 h1{
     margin-left: 0%;
 }
+.btn{
+    border-color: chocolate;
+    color: chocolate;
+    width: 50px;
+}
 
