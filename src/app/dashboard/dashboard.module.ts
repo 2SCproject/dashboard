@@ -7,6 +7,7 @@ import {DashboardComponent} from './dashboard.component';
 import { UsersComponent } from '../users/users.component';
 import { OrdersComponent } from '../orders/orders.component';
 import { AddcoursComponent } from '../addcours/addcours.component';
+import { EditproductComponent } from '../editproduct/editproduct.component';
 
 
 
@@ -18,7 +19,7 @@ import { AddcoursComponent } from '../addcours/addcours.component';
     UsersComponent,
     OrdersComponent,
     AddcoursComponent,
-    
+    EditproductComponent,
 
   ],
   imports: [

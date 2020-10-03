@@ -4,6 +4,7 @@ import {DashboardComponent} from './dashboard.component';
 import { UsersComponent } from '../users/users.component';
 import { OrdersComponent } from '../orders/orders.component';
 import { AddcoursComponent } from '../addcours/addcours.component';
+import { EditproductComponent } from '../editproduct/editproduct.component';
 
 
 
@@ -16,7 +17,8 @@ import { AddcoursComponent } from '../addcours/addcours.component';
                               {path: '', component: DashboardComponent},
                               {path: 'users', component: UsersComponent},
                               {path:'orders',component:OrdersComponent},
-                              {path:'product/add',component:AddcoursComponent}
+                              {path:'product/add',component:AddcoursComponent},
+                              {path:'product/edit',component:EditproductComponent}
                         ];
 
 @NgModule({
