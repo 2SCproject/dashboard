@@ -15,11 +15,13 @@ import { EditproductComponent } from '../editproduct/editproduct.component';
 
  const routes: Routes = [
                               {path: '', component: DashboardComponent},
+                              { path: '', component: DashboardComponent, children: [
+
                               {path: 'users', component: UsersComponent},
                               {path:'orders',component:OrdersComponent},
                               {path:'product/add',component:AddcoursComponent},
                               {path:'product/edit/:id',component:EditproductComponent}
-                        ];
+                        ]}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

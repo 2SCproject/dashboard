@@ -1,3 +1,4 @@
+<body>
 <div class="container-fluid" style=" background-color: #EBEBEB;">
     <div class="row">
         <div class="col-2 collapse show d-md-flex  pt-2 pl-0 min-vh-100 vrtc" id="sidebar">
@@ -50,7 +51,6 @@
             </ul>
         </div>
         <div class="col pt-2">   
-
             <nav class="navbar navbar-expand-lg navbar-light ">
                 <form class="form-inline my-2 my-lg-0">
                    
@@ -88,8 +88,13 @@
                  <span class="navbar-toggler-icon"></span>
                </button>
              </nav>  
+             <div class="col-md-12">
+             <!--<app-users></app-users>--> 
+             <router-outlet></router-outlet>
+             </div>
             
         </div>
     </div>
     
 </div>
+</body>
