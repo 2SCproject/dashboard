@@ -3,8 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import {DashboardComponent} from './dashboard.component';
 import { UsersComponent } from '../users/users.component';
 import { OrdersComponent } from '../orders/orders.component';
-import { AddcoursComponent } from '../addcours/addcours.component';
+import { AddproductComponent } from '../addproduct/addproduct.component';
 import { EditproductComponent } from '../editproduct/editproduct.component';
+import { SettingsComponent } from '../settings/settings.component';
 
 
 
@@ -17,8 +18,9 @@ import { EditproductComponent } from '../editproduct/editproduct.component';
                               {path: '', component: DashboardComponent},
                               {path: 'users', component: UsersComponent},
                               {path:'orders',component:OrdersComponent},
-                              {path:'product/add',component:AddcoursComponent},
-                              {path:'product/edit/:id',component:EditproductComponent}
+                              {path:'product/add',component:AddproductComponent},
+                              {path:'product/edit/:id',component:EditproductComponent},
+                              {path:'settings',component:SettingsComponent},
                         ];
 
 @NgModule({

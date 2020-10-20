@@ -6,7 +6,7 @@ import {FormsModule} from '@angular/forms';
 import {DashboardComponent} from './dashboard.component';
 import { UsersComponent } from '../users/users.component';
 import { OrdersComponent } from '../orders/orders.component';
-import { AddcoursComponent } from '../addcours/addcours.component';
+import { AddproductComponent } from '../addproduct/addproduct.component';
 import { EditproductComponent } from '../editproduct/editproduct.component';
 
 
@@ -18,7 +18,7 @@ import { EditproductComponent } from '../editproduct/editproduct.component';
     DashboardComponent,
     UsersComponent,
     OrdersComponent,
-    AddcoursComponent,
+    AddproductComponent,
     EditproductComponent,
 
   ],
