@@ -17,8 +17,22 @@ export class AddproductComponent implements OnInit {
   public d;
 
   constructor(private route:ActivatedRoute,private router:Router, private s:InventoryService) { }
+  products=[];
 
-  ngOnInit(): void {
+  ngOnInit() {
+    var id=this.route.snapshot.paramMap.get('id');
+    this.productId=id;
+    this.s.getProductById(id)
+    .subscribe(res => {this.p=res.Price;this.d=res.Descreption }
+      );
+
   }
+
+  OnSubmitAddProduct(product:Product){
+    this.s.addProduct(product)
+                 .subscribe(resnextCourse=>this.products.push(resnextCourse));
+                 this.router.navigate(['/ms-inventory/products']);
+                 console.log(product);
+   }
 
 }

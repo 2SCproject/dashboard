@@ -8,7 +8,15 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 })
 export class InventoryService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+
+  getProductById(id:string){
+    return this.http.get<Product>("https://6138cfb37153.ngrok.io/ms-inventory/products/"+id)
+    .pipe(
+          map(response=>response)
+         );
+} 
 
   addProduct(product:Product){
     console.log(JSON.stringify(product));
