@@ -16,12 +16,14 @@ import { SettingsComponent } from '../settings/settings.component';
 
  const routes: Routes = [
                               {path: '', component: DashboardComponent},
+                              { path: '', component: DashboardComponent, children: [
+
                               {path: 'users', component: UsersComponent},
                               {path:'orders',component:OrdersComponent},
                               {path:'product/add',component:AddproductComponent},
                               {path:'product/edit/:id',component:EditproductComponent},
                               {path:'settings',component:SettingsComponent},
-                        ];
+                        ],
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
