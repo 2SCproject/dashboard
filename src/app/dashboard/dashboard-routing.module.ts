@@ -24,6 +24,8 @@ import { SettingsComponent } from '../settings/settings.component';
                               {path:'product/edit/:id',component:EditproductComponent},
                               {path:'settings',component:SettingsComponent},
                         ],
+                      }
+                      ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
