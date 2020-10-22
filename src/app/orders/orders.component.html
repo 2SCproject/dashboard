@@ -1,53 +1,50 @@
-<div class="container-fluid" style=" background-color: #EBEBEB;">
 
             
-                   
-    <div class="col-md-12">
-        <div class="card" style="margin-top:20px ;">
-            <div class="card-header">
-                <strong class="card-title">Data Table</strong>
-            </div>
-            <div class="card-body">
-                <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
-                    <thead>
-                        <tr>
-                            <th scope="col">Id Order</th>
-                            <th scope="col">User</th>
-                            <th scope="col">Orderstatue </th>
-                            <th scope="col">Price </th>
-                            <th scope="col">DeliveryTime</th>
-                            <th scope="col">edit</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>user 1</td>
-                            <td>shipped</td>
-                            <td>200$</td>
-                            <td>15/10/2020</td>
-                            
-                            <td>
-                                <button type="button" class="btn btn-danger">delete</button> 
-                            </td>
-                        </tr>
-                        <tr *ngfor="let o of orders">
-                            <td>{{o.id}}</td>
-                            <td>{{o.user}}</td>
-                            <td>{{o.orderstatus}}</td>
-                            <td>{{o.price}}</td>
-                            <td>{{o.DeliveryTime}}</td>
-                            
-                            <td>
-                                <button type="button" class="btn btn-danger">delete</button> 
-                            </td>
-                        </tr>
-                       
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+                            <div class="card" style="margin-top:20px ; width: 100%;">
+                                <div class="card-header">
+                                    <strong class="card-title">Data Table</strong>
+                                </div>
+                                <div class="card-body">
+                                    <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Username</th>
+                                                <th>Email</th>
+                                                <th>Adress</th>
+                                                <th>User State</th>
+                                                <th>Managed</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Tiger Nixon</td>
+                                                <td>System Architect</td>
+                                                <td>Edinburgh</td>
+                                                <td> active</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-danger" style="margin-left: 5%;">delete</button> 
+                                                    <button type="button" class="btn btn-warning" style="margin-left: 5%;">banned</button>
+                                                </td>
+                                                
+                                            </tr>
+                                            <!--(users$ | async)?.someProperty-->
+                                            <tr  *ngFor="let u of orders">
+                                                <td>{{u.username}}</td>
+                                                <td>{{u.email}}</td>
+                                                <td> {{u.adress}}</td>
+                                                <td>{{u.userstate}}</td>
+                                                
+                                                <td>
+                                                    <button type="button" class="btn btn-danger" style="margin-left: 5%;">delete</button> 
+                                                    <button type="button" class="btn btn-warning" style="margin-left: 5%;">banned</button>
+                                                </td>
+                                            </tr>
 
-
-</div>
+                                        </tbody>
+                                    </table>
+                                    
+                                </div>
+                            </div>
+                        
+        
+  

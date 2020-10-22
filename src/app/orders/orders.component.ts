@@ -1,8 +1,10 @@
 
 import { Component, OnInit } from '@angular/core';
 import {Order} from '../order';
+import {User} from '../user';
 import {Router} from '@angular/router';
-import {UserService} from '../service/user.service';
+import {OrderService} from '../service/order.service';
+
 
 
 @Component({
@@ -11,15 +13,17 @@ import {UserService} from '../service/user.service';
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent implements OnInit {
-  orders:Array<Order>;
-  constructor(private router:Router,  private l:UserService){}
+ 
+  orders:Array<User>;
+  constructor(private router:Router,  private l:OrderService){}
 
   ngOnInit() {
     
     
-    this.l.getUsers()
+    this.l.getOrders()
     .subscribe(resCours =>this.orders=resCours);
   }
+
 
 }
 

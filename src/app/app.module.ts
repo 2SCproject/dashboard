@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { SettingsComponent } from './settings/settings.component';
 import {HttpClientModule } from '@angular/common/http';
+import {UserService} from './service/user.service';
+import { OrderService } from './service/order.service';
+
 
 
 
@@ -25,7 +28,7 @@ import {HttpClientModule } from '@angular/common/http';
     DashboardModule,
     FormsModule
   ],
-  providers: [],
+  providers: [UserService,OrderService],
   bootstrap: [AppComponent]
 })
 
