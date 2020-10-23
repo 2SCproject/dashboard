@@ -4,9 +4,25 @@
   border-radius: 20px;
   height: 65px;
   width: 250px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
   
+}
+
+#category1{
+
+  background-color: #CCC5B9;
+  border-radius: 20px;
+  height: 65px;
+  width: 250px;
+  margin-left: 5px;
+  margin-right: 5px;
+  
+}
+
+#N2{
+  color: coral;
+
 }
 
 
