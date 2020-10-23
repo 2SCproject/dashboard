@@ -7,6 +7,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { SettingsComponent } from './settings/settings.component';
 import {HttpClientModule } from '@angular/common/http';
 import { InventoryService } from './service/inventory.service';
+import { CategoryComponent } from './category/category.component';
 
 
 
@@ -17,6 +18,7 @@ import { InventoryService } from './service/inventory.service';
   declarations: [
     AppComponent,
     SettingsComponent,
+    CategoryComponent,
     
   ],
   imports: [
