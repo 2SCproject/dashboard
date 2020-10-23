@@ -1,9 +1,9 @@
 export class Product {
-  _id:string;
+  _id?:string;
   Price?: string;
   Image?:string;
   Descreption?:string;
   Mark?:string;
-  Quatity?:string;
+  Quantity?:string;
   Name?:string;
 }

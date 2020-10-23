@@ -2,36 +2,36 @@
 
              <div class="col-md-12">
                 <div class="abc">
-                    <form  class="login " style="margin:5%" #myform="ngForm" >
-                        <h3 style="">Product Details</h3>
-                        <hr style="border-color:crimson;">
-                        <div class="form-row" style="padding-bottom: 73px;">
-                         <div class="form-group  col-md-8 ">
-                             <label ></label>
-                             <h6>image</h6>
-                             <img class="immg" type="image" src="https://www.angisy.com/wp-content/uploads/2020/03/image-pub5.jpg" >
-                           </div>
-                          <div class="form-group  col-md-8 ">
-                            <label >Title</label>
-                            <input type="text" class="form-control" id="inputitle" placeholder="Title of the course" >
-                          </div>
-                          <div class="form-group col-md-8">
-                            <label for="inputPassword4" >Description</label>
-                            <textarea rows="4" cols="50" class="form-control" id="inputdescription" placeholder="Descreption of the course" ></textarea>
-                          </div>
-                          <div class="form-group col-md-8">
-                           <label  >Qauntity</label>
-                           <input type="text" class="form-control" id="inputdescription" placeholder="date of the course" >
+                    <form  class="login " style="margin:5%" #myform="ngForm" (ngSubmit)="OnSubmitSaveProduct(myform.value)">
+                      <h3 >Product Details</h3>
+                      <hr style="border-color:crimson;">
+                      <div class="form-row" style="padding-bottom: 73px;">
+                       <div class="form-group  col-md-8 ">
+                           <label ></label>
+                           <h6>image</h6>
+                           <img class="immg" type="image" src="https://www.angisy.com/wp-content/uploads/2020/03/image-pub5.jpg" >
                          </div>
-                         <div class="form-group col-md-8">
-                           <label  >Price</label>
-                           <input type="text" class="form-control" id="inputdescription" placeholder="" >
-                         </div>
-                         <br>
-                         <div class="col-md-4"></div>
-                         <div class="col-md-6"></div>
-                        <button  type="submit" class="btn btnadd col-md-2 " >Save</button>
-                      </div>
+                        <div class="form-group  col-md-8 ">
+                          <label >Price</label>
+                          <input type="text" name="Price" class="form-control" id="inputprice" placeholder="Price of the product"[(ngModel)]="p" #Price="ngModel"  >
+                        </div>
+                        <div class="form-group col-md-8">
+                          <label for="inputPassword4" >Description</label>
+                          <textarea rows="4" cols="50" name="Descreption" class="form-control" id="inputdescreption" placeholder="Descreption of the product" [(ngModel)]="d" #Descreption="ngModel" ></textarea>
+                        </div>
+                        <div class="form-group col-md-8">
+                         <label  >Qauntity</label>
+                         <input type="text" name="Qauntity" class="form-control" id="inputquantity" placeholder="Qauntity of the produc" [(ngModel)]="q" #Quantity="ngModel"  >
+                       </div>
+                       <div class="form-group col-md-8">
+                         <label  >Name</label>
+                         <input type="text" name="Name" class="form-control" id="inputname" placeholder="" [(ngModel)]="n" #Name="ngModel" required >
+                       </div>
+                       <br>
+                       <div class="col-md-4"></div>
+                       <div class="col-md-6"></div>
+                      <button  type="submit" class="btn btnadd col-md-2 " >Save</button>
+                    </div>
                     </form>
               
             
