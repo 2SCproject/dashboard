@@ -6,6 +6,7 @@ import { OrdersComponent } from '../orders/orders.component';
 import { AddproductComponent } from '../addproduct/addproduct.component';
 import { EditproductComponent } from '../editproduct/editproduct.component';
 import { SettingsComponent } from '../settings/settings.component';
+import { CategoryComponent } from '../category/category.component';
 
 
 
@@ -23,6 +24,7 @@ import { SettingsComponent } from '../settings/settings.component';
                               {path:'product/add',component:AddproductComponent},
                               {path:'product/edit/:id',component:EditproductComponent},
                               {path:'settings',component:SettingsComponent},
+                              {path:'categories',component:CategoryComponent},
                         ],
                       }
                       ];

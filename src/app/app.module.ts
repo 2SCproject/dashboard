@@ -9,6 +9,8 @@ import {HttpClientModule } from '@angular/common/http';
 import {UserService} from './service/user.service';
 import { OrderService } from './service/order.service';
 
+import { InventoryService } from './service/inventory.service';
+import { CategoryComponent } from './category/category.component';
 
 
 
@@ -19,6 +21,7 @@ import { OrderService } from './service/order.service';
   declarations: [
     AppComponent,
     SettingsComponent,
+    CategoryComponent,
     
   ],
   imports: [
@@ -28,7 +31,7 @@ import { OrderService } from './service/order.service';
     DashboardModule,
     FormsModule
   ],
-  providers: [UserService,OrderService],
+  providers: [UserService,OrderService,InventoryService],
   bootstrap: [AppComponent]
 })
 
