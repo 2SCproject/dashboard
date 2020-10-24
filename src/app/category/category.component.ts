@@ -15,6 +15,12 @@ export class CategoryComponent implements OnInit {
     }
   }
 
+  public onmouseout(){
+    if (this.val==false){
+      this.val=true;
+    }
+  }
+
   constructor() { }
 
   ngOnInit(): void {
