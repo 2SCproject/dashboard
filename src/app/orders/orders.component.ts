@@ -14,14 +14,16 @@ import {OrderService} from '../service/order.service';
 })
 export class OrdersComponent implements OnInit {
  
-  orders:Array<User>;
-  constructor(private router:Router,  private l:OrderService){}
+  orders:Array<Order>;
+  
+  constructor(private router:Router,  private l:OrderService,){}
 
   ngOnInit() {
     
     
     this.l.getOrders()
     .subscribe(resCours =>this.orders=resCours);
+    
   }
 
 

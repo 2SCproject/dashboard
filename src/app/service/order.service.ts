@@ -13,17 +13,19 @@ export class OrderService {
   constructor(private http:HttpClient ) {}
 
   getOrders(){
-    console.log("yep")
-    return this.http.get<User[]>("http://localhost:3000/appUsers")
+    console.log("yORDER")
+    return this.http.get<Order[]>("http://localhost:9000/userorders")
     .pipe(
-          map(response=>response['_embedded'].appUsers)
+          map(response=>response['_embedded'].userorders)
          );
 }
 
+ 
+
 }
-interface appUsers{
+interface userorders{
   _embedded:{
-    appUsers:Order[];
+    userorders:Order[];
     _links:{self:{href:string}};
   }
 }

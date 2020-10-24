@@ -19,6 +19,42 @@ export class UserService {
           map(response=>response['_embedded'].appUsers)
          );
 }
+getUserById(id:string){
+ // return this.http.get<User>("http://localhost:3000/appUsers/"+id)
+ let headers= new HttpHeaders ({
+  'Content-Type': 'application/json',
+});
+let options = {
+  headers:headers
+}
+ console.log("done");
+ return this.http.get<User[]>("http://localhost:3000/userdetails/"+id,options)
+  .pipe(
+        map(response=>response)
+       );
+}
+getUserByUsername(username:string){
+  // return this.http.get<User>("http://localhost:3000/appUsers/"+id)
+ 
+  return this.http.get<User>("http://localhost:3000/user/"+username)
+   .pipe(
+         map(response=>response)
+        );
+ }
+ getUserByEmail(email:string){
+  // return this.http.get<User>("http://localhost:3000/appUsers/"+id)
+  let headers= new HttpHeaders ({
+    'Content-Type': 'application/json',
+});
+let options = {
+    headers:headers
+}
+ 
+  return this.http.get<User>("http://localhost:3000/user/email"+email,options)
+   .pipe(
+         map(response=>response)
+        );
+ }
 
 }
 interface appUsers{
@@ -27,3 +63,9 @@ interface appUsers{
     _links:{self:{href:string}};
   }
 }
+/**let headers= new HttpHeaders ({
+                'Content-Type': 'application/json',
+            });
+            let options = {
+                headers:headers
+            } */
