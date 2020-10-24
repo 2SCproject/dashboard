@@ -8,9 +8,9 @@ import { SettingsComponent } from './settings/settings.component';
 import {HttpClientModule } from '@angular/common/http';
 import {UserService} from './service/user.service';
 import { OrderService } from './service/order.service';
-
 import { InventoryService } from './service/inventory.service';
-import { CategoryComponent } from './category/category.component';
+
+
 
 
 
@@ -21,7 +21,8 @@ import { CategoryComponent } from './category/category.component';
   declarations: [
     AppComponent,
     SettingsComponent,
-    CategoryComponent,
+   
+    
     
   ],
   imports: [

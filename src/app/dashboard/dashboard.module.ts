@@ -8,6 +8,9 @@ import { UsersComponent } from '../users/users.component';
 import { OrdersComponent } from '../orders/orders.component';
 import { AddproductComponent } from '../addproduct/addproduct.component';
 import { EditproductComponent } from '../editproduct/editproduct.component';
+import { CategoryComponent } from '../category/category.component';
+import { UsersearchComponent } from '../usersearch/usersearch.component';
+import { OrdersearchComponent } from '../ordersearch/ordersearch.component';
 
 
 
@@ -20,6 +23,9 @@ import { EditproductComponent } from '../editproduct/editproduct.component';
     OrdersComponent,
     AddproductComponent,
     EditproductComponent,
+    CategoryComponent,
+    UsersComponent,
+    OrdersComponent,
 
   ],
   imports: [

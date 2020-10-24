@@ -26,7 +26,7 @@ export class InventoryService {
     let options = {
       headers: headers
     }
-    return this.http.post<Product[]>("https://90c7cc4286b7.ngrok.io/ms-inventory/products",JSON.stringify(product),options)
+    return this.http.post<Product[]>("http://localhost:8081/products",JSON.stringify(product),options)
     .pipe(
       map(response=>response)
     );

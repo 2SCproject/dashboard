@@ -28,18 +28,18 @@
                                                 
                                             </tr>
                                             <!--(users$ | async)?.someProperty-->
-                                            <tr  *ngFor="let u of orders">
-                                                <td>{{u.username}}</td>
-                                                <td>{{u.email}}</td>
-                                                <td> {{u.adress}}</td>
-                                                <td>{{u.userstate}}</td>
+                                            <tr  *ngFor="let o of orders">
+                                                <td>{{o.id}}</td>
+                                                <td>{{o.date}}</td>
+                                                <td>{{o.orderstatus}}</td>
+                                                <td>{{o.cart}}</td>
+                                                
                                                 
                                                 <td>
                                                     <button type="button" class="btn btn-danger" style="margin-left: 5%;">delete</button> 
                                                     <button type="button" class="btn btn-warning" style="margin-left: 5%;">banned</button>
                                                 </td>
                                             </tr>
-
                                         </tbody>
                                     </table>
                                     
