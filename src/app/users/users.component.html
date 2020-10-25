@@ -1,7 +1,7 @@
 
                            <form #myform="ngForm" class="form-inline my-2 my-lg-0" (ngSubmit)="OnSubmitSearchProduct(myform.value)">
                             
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search User" aria-label="Search" name="user" #user="ngModel" [(ngModel)]="value" style="background-color: transparent;border-color: black; width: 280px;">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search User" aria-label="Search" name="value"  [(ngModel)]="value" style="background-color: transparent;border-color: black; width: 280px;">
                            <!-- <i class="fa fa-download" style="margin-left:2px;"  type="submit"></i>-->
                             <button  type="submit" class="btn btnadd " style="background-color: transparent;border-color: black; width: 55px;">ADD</button>
                           </form>
@@ -41,7 +41,7 @@
                                                 <td>{{u.userstate}}</td>
                                                 
                                                 <td>
-                                                    <button type="button" class="btn btn-danger" style="margin-left: 5%;">delete</button> 
+                                                    <button type="button" class="btn btn-danger" style="margin-left: 5%;" (click)="OnDeleteCour(u._id)">delete</button> 
                                                     <button type="button" class="btn btn-warning" style="margin-left: 5%;">banned</button>
                                                 </td>
                                             </tr>

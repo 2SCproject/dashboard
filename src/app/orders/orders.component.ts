@@ -15,6 +15,7 @@ import {OrderService} from '../service/order.service';
 export class OrdersComponent implements OnInit {
  
   orders:Array<Order>;
+  value:string;
   
   constructor(private router:Router,  private l:OrderService,){}
 
@@ -25,6 +26,10 @@ export class OrdersComponent implements OnInit {
     .subscribe(resCours =>this.orders=resCours);
     
   }
+  OnSubmitSearchProduct(value){
+    console.log("zone");
+    this.l.getOrderById(value)
+    .subscribe((resCours) =>this.orders=resCours);}
 
 
 }

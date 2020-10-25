@@ -12,7 +12,7 @@ import {UserService} from '../service/user.service';
 export class UsersComponent implements OnInit {
   users:any;
   user;
-  value:any;
+  value:string;
   constructor(private router:Router,  private l:UserService){}
 
   ngOnInit() {
@@ -24,7 +24,8 @@ export class UsersComponent implements OnInit {
   OnSubmitSearchProduct(value){
     console.log("zone");
     this.l.getUserById(value)
-    .subscribe((resCours) =>this.user=resCours);
+    .subscribe((resCours) =>this.users=resCours);
+    
     //search email
    // this.l.getUserByEmail (value)
    // .subscribe((resCours) =>this.user=resCours);
@@ -32,6 +33,11 @@ export class UsersComponent implements OnInit {
    // this.l.getUserByUsername (value)
    // .subscribe((resCours) =>this.user=resCours);
   
+  }
+  OnDeleteCour(id:string){
+    console.log("deleteeuser")
+    this.l.deleteUser(id)
+    .subscribe(data=>this.users=data);          
   }
   
  
