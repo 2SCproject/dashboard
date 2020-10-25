@@ -10,22 +10,23 @@
                   <h6>image</h6>
                   <img class="immg" type="image" src="https://www.angisy.com/wp-content/uploads/2020/03/image-pub5.jpg" >
                 </div>
+                <div class="form-group col-md-8">
+                  <label  >Name</label>
+                  <input type="text" name="Name" class="form-control" id="inputname" placeholder="" [(ngModel)]="n" #Name="ngModel" required >
+                </div>
                <div class="form-group  col-md-8 ">
                  <label >Price</label>
-                 <input type="text" name="Price" class="form-control" id="inputprice" placeholder="Price of the product"[(ngModel)]="p" #Price="ngModel"  >
+                 <input type="text" name="price" class="form-control" id="inputprice" placeholder="Price of the product"[(ngModel)]="p" #price="ngModel"  >
                </div>
                <div class="form-group col-md-8">
                  <label for="inputPassword4" >Description</label>
-                 <textarea rows="4" cols="50" name="Descreption" class="form-control" id="inputdescreption" placeholder="Descreption of the product" [(ngModel)]="d" #Descreption="ngModel" ></textarea>
+                 <textarea rows="4" cols="50" name="descreption" class="form-control" id="inputdescreption" placeholder="Descreption of the product" [(ngModel)]="d" #descreption="ngModel" ></textarea>
                </div>
                <div class="form-group col-md-8">
                 <label  >Qauntity</label>
-                <input type="text" name="Qauntity" class="form-control" id="inputquantity" placeholder="Qauntity of the produc" [(ngModel)]="q" #Quantity="ngModel"  >
+                <input type="text" name="qauntity" class="form-control" id="inputquantity" placeholder="Qauntity of the produc" [(ngModel)]="q" #quantity="ngModel"  >
               </div>
-              <div class="form-group col-md-8">
-                <label  >Name</label>
-                <input type="text" name="Name" class="form-control" id="inputname" placeholder="" [(ngModel)]="n" #Name="ngModel" required >
-              </div>
+              
               <br>
               <div class="col-md-4"></div>
               <div class="col-md-6"></div>

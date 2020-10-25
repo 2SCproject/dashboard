@@ -24,7 +24,7 @@ export class EditproductComponent implements OnInit {
     var id=this.route.snapshot.paramMap.get('id');
     this.productId=id;
     this.s.getProductById(id)
-    .subscribe(res => {this.p=res.Price;this.d=res.Descreption;this.q=res.Quantity;this.n=res.Name  }
+    .subscribe(res => {this.n=res.Name;this.p=res.price;this.d=res.descreption;this.q=res.quantity }
       );
   }
 
