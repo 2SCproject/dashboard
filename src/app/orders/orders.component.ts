@@ -30,7 +30,5 @@ export class OrdersComponent implements OnInit {
     console.log("zone");
     this.l.getOrderById(value)
     .subscribe((resCours) =>this.orders=resCours);}
-
-
 }
 

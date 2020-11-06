@@ -28,7 +28,7 @@ getOrderById(id:string){
    headers:headers
  }
   console.log("done");
-  return this.http.get<Order[]>("http://localhost:9000/userorders/"+id,options)
+  return this.http.get<Order[]>("http://localhost:9000/order/"+id,options)
    .pipe(
          map(response=>response)
         );
