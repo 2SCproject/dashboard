@@ -8,6 +8,22 @@
   margin-right: 5px;
   
 }
+h6{color: coral;
+}
+
+#add{ 
+  color: coral;
+  margin-left: 550px;
+}
+#savec{
+  border-color: coral;
+  color: coral;
+}
+
+.A{
+  float: left;
+}
+
 
 
 

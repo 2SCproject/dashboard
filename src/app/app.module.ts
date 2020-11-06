@@ -9,6 +9,7 @@ import {HttpClientModule } from '@angular/common/http';
 import {UserService} from './service/user.service';
 import { OrderService } from './service/order.service';
 import { InventoryService } from './service/inventory.service';
+import { ProductsComponent } from './products/products.component';
 
 
 
@@ -21,6 +22,7 @@ import { InventoryService } from './service/inventory.service';
   declarations: [
     AppComponent,
     SettingsComponent,
+    ProductsComponent,
    
     
     

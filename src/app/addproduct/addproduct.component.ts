@@ -25,7 +25,7 @@ export class AddproductComponent implements OnInit {
     var id=this.route.snapshot.paramMap.get('id');
     this.productId=id;
     this.s.getProductById(id)
-    .subscribe(res => {this.n=res.Name;this.p=res.price;this.d=res.descreption;this.q=res.quantity }
+    .subscribe(res => {this.p=res.price;this.d=res.descreption;this.n=res.name ;this.q=res.quantity}
       );
 
   }
@@ -34,6 +34,7 @@ export class AddproductComponent implements OnInit {
     this.s.addProduct(product)
                  .subscribe(resnextProduct=>this.products.push(resnextProduct));
                  this.router.navigate(['/products']);
+                 
                 
    }
 

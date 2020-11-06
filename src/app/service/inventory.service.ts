@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Product} from '../product';
+import { Category} from '../category';
 import {map} from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 
@@ -10,13 +11,36 @@ export class InventoryService {
 
   constructor(private http: HttpClient) { }
 
-
-  getProductById(id:string){
-    return this.http.get<Product>("https://6138cfb37153.ngrok.io/ms-inventory/products/"+id)
+  getCategoryById(id:string){
+    return this.http.get<Category>("http://localhost:8081/categories/"+id)
     .pipe(
           map(response=>response)
          );
 } 
+
+
+  getProductById(id:string){
+    return this.http.get<Product>("http://localhost:8081/products/"+id)
+    .pipe(
+          map(response=>response)
+         );
+} 
+
+
+
+  UpdateProduct(product:Product){
+    console.log(JSON.stringify(product));
+    let headers = new HttpHeaders({
+      'Content-Type':'application/json'
+    });
+    let options={
+      headers:headers
+    }
+    return this.http.put("http://localhost:8081/products"+product._id,JSON.stringify(product),options)
+    .pipe(
+      map(response=>response)
+    );
+  }
 
   addProduct(product:Product){
     console.log(JSON.stringify(product));
@@ -32,19 +56,32 @@ export class InventoryService {
     );
   }
 
-  UpdateProduct(product:Product){
-    console.log(JSON.stringify(product));
+
+
+  addCategory(category:Category){
+    console.log(JSON.stringify(category));
     let headers = new HttpHeaders({
       'Content-Type':'application/json'
     });
-    let options={
-      headers:headers
+    let options = {
+      headers: headers
     }
-    return this.http.put("https://90c7cc4286b7.ngrok.io/ms-inventory/products"+product._id,JSON.stringify(product),options)
+    return this.http.post<Category[]>("http://localhost:8081/categories",JSON.stringify(category),options)
     .pipe(
       map(response=>response)
     );
   }
 
+  getCategories(){
+    return this.http.get<Category[]>("http://localhost:8081/categories").pipe(
+      map(response=>response['_embedded'].categories)
+    );
+  }
+}
 
+interface categories{
+  _embedded:{
+    appUsers:Category[];
+    _links:{self:{href:string}};
+  }
 }

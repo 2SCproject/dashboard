@@ -1,6 +1,6 @@
 export class Product {
   _id?:string;
-  Name?:string;
+  name?:string;
   price?: string;
   image?:string;
   descreption?:string;

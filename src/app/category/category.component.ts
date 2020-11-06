@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+import {InventoryService} from '../service/inventory.service';
+import { Category} from '../category';
+import{ActivatedRoute}from '@angular/router';
 
 @Component({
   selector: 'app-category',
@@ -7,23 +11,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryComponent implements OnInit {
 
-  public val : boolean=true;
+  public categoryId;
+  public cn;
 
-  public onmouseover(){
-    if (this.val==true){
-      this.val=false;
-    }
+  categories=[];
+
+ 
+
+  constructor(private route:ActivatedRoute,private router:Router, private s:InventoryService) { }
+
+  ngOnInit()  {
+    var id=this.route.snapshot.paramMap.get('id');
+    this.categoryId=id;
+    this.s.getCategoryById(id)
+    .subscribe(res => {this.cn=res.name }
+      );
+
+
+
+    this.s.getCategories().subscribe(resCategories => this.categories=resCategories);
   }
 
-  public onmouseout(){
-    if (this.val==false){
-      this.val=true;
-    }
-  }
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  OnSubmitAddCategory(category:Category){
+    this.s.addCategory(category)
+                 .subscribe(resnextCategory=>this.categories.push(resnextCategory));
+                 this.router.navigate(['/categories']);
+                
+   }
 
 }
