@@ -19,6 +19,20 @@ export class OrderService {
           map(response=>response['_embedded'].userorders)
          );
 }
+/////orders by id
+getOrderById(id:string){
+  let headers= new HttpHeaders ({
+   'Content-Type': 'application/json',
+ });
+ let options = {
+   headers:headers
+ }
+  console.log("done");
+  return this.http.get<Order[]>("http://localhost:9000/order/"+id,options)
+   .pipe(
+         map(response=>response)
+        );
+ }
 
  
 

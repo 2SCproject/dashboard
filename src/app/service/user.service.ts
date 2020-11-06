@@ -20,15 +20,14 @@ export class UserService {
          );
 }
 getUserById(id:string){
- // return this.http.get<User>("http://localhost:3000/appUsers/"+id)
  let headers= new HttpHeaders ({
   'Content-Type': 'application/json',
 });
 let options = {
   headers:headers
 }
- console.log("done");
- return this.http.get<User[]>("http://localhost:3000/userdetails/"+id,options)
+ console.log("done");http://51333385ec44.ngrok.io/ms_auth/appUsers/
+ return this.http.get<User[]>("https://51333385ec44.ngrok.io/ms-auth/aapUsers"+id,options)
   .pipe(
         map(response=>response)
        );
@@ -55,6 +54,20 @@ let options = {
          map(response=>response)
         );
  }
+   //delete enseignat cour
+   deleteUser(id:string){
+    console.log("delete");
+    let headers= new HttpHeaders ({
+        'Content-Type': 'application/json',
+    });
+    let options = {
+        headers:headers
+    }
+    return this.http.delete<User[]>("http://localhost:3000/appUsers/"+id,options)
+    .pipe(
+        map(response=>response['_embedded'].appUsers)
+    ); 
+}
 
 }
 interface appUsers{
