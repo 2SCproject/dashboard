@@ -33,8 +33,10 @@ export class CategoryComponent implements OnInit {
   }
 
   OnSubmitAddCategory(category:Category){
+    console.log("avant");
     this.s.addCategory(category)
                  .subscribe(resnextCategory=>this.categories.push(resnextCategory));
+                 console.log("apres");
                  this.router.navigate(['/categories']);
                 
    }
