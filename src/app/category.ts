@@ -1,5 +1,5 @@
 export class Category {
-  _id?:string;
+  idCategory?:string;
   name?:string;
  
 

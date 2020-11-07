@@ -36,7 +36,7 @@ export class InventoryService {
     let options={
       headers:headers
     }
-    return this.http.put("http://localhost:8081/products"+product._id,JSON.stringify(product),options)
+    return this.http.put("http://localhost:8081/products"+product.idProduct,JSON.stringify(product),options)
     .pipe(
       map(response=>response)
     );
@@ -77,11 +77,44 @@ export class InventoryService {
       map(response=>response['_embedded'].categories)
     );
   }
+
+  getProducts(){
+    return this.http.get<Product[]>("http://localhost:8081/products").pipe(
+      map(response=>response['_embedded'].products)
+    );
+  }
+
+  
+  deleteProduct(product:Product){
+    console.log(JSON.stringify(product));
+    let headers= new HttpHeaders ({
+        'Content-Type': 'application/json',
+    });
+    let options = {
+        headers:headers
+    }
+    return this.http.delete<Product[]>("http://localhost:8081/products/"+product.idProduct,options)
+    .pipe(
+        map(response=>response)
+    ); 
 }
+
+
+
+}
+
+
 
 interface categories{
   _embedded:{
     appUsers:Category[];
+    _links:{self:{href:string}};
+  }
+}
+
+interface products{
+  _embedded:{
+    appUsers:Product[];
     _links:{self:{href:string}};
   }
 }
