@@ -1,4 +1,61 @@
-<p>products works!</p>
+
+<div class="container">
+  <h3 class="A" >Products</h3> 
+  
+  <button id="add" type="button" class="btn A" ><i class="fa fa-plus-circle" aria-hidden="true"></i> add new Product</button>
+
+
+  <br><br>
+
+  <div class="row">
+    
+     <div class="col-lg-3 col-md-6 col-sm-12 "  *ngFor="let p of products">
+     
+      <div class="img" [ngStyle]="{'background': '#bdbdbd'}"  >
+        <div class="anim"></div>
+        <div class="product"  >
+          <h4 style="margin-left: 25px;" >{{p.name}}</h4>
+          <div class="acts">
+            <a (click)="OnUpdateProduct(p)" routerLink="/product/edit/{{p.idProduct}}" ><i class="fa fa-pencil"></i></a> &nbsp;
+            <a data-toggle="modal" data-target="#myModal"><i class="fa fa-trash"></i></a>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+              <div class="modal-dialog">
+              
+                <!-- Modal content-->
+                <div class="modal-content">
+                 
+                  <div class="modal-body">
+                    <h4 > are you sure ?</h4>
+                  </div>
+                  <div class="modal-footer">
+                    <button id="delete" type="submit" class="btn" (click)="OnDeleteProduct(p)">delete</button>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            
+ 
+           </div>
+        </div>
+ 
+      </div>
+     
+
+    </div>
+
+   
+
+   
+
+  
+  </div>
+  <br><br>
+
+   
+</div>
 
 
 

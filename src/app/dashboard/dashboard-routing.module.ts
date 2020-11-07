@@ -7,6 +7,7 @@ import { AddproductComponent } from '../addproduct/addproduct.component';
 import { EditproductComponent } from '../editproduct/editproduct.component';
 import { SettingsComponent } from '../settings/settings.component';
 import { CategoryComponent } from '../category/category.component';
+import { ProductsComponent } from '../products/products.component';
 import { UsersearchComponent } from '../usersearch/usersearch.component';
 import { OrdersearchComponent } from '../ordersearch/ordersearch.component';
 
@@ -27,6 +28,7 @@ import { OrdersearchComponent } from '../ordersearch/ordersearch.component';
                               {path:'product/edit/:id',component:EditproductComponent},
                               {path:'settings',component:SettingsComponent},
                               {path:'categories',component:CategoryComponent},
+                              {path:'products',component:ProductsComponent},
                               {path:'user/search',component:UsersComponent },
                               {path:'order/search',component:OrdersComponent},
                         ],
