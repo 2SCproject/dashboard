@@ -1,7 +1,7 @@
 <div class="container-fluid" style=" background-color: #EBEBEB;">
 
   <div class="col-md-12">
-         <form  class="login " style="margin:5%" #myform="ngForm" (ngSubmit)="OnSubmitAddProduct(myform.value) ">
+         <form  class="login " style="margin:5%" #myform="ngForm" (ngSubmit)="onSubmit() ">
              <h3 >Product Details</h3>
              <hr style="border-color:crimson;">
              <div class="form-row" style="padding-bottom: 73px;">
@@ -9,6 +9,11 @@
                   <label ></label>
                   <h6>image</h6>
                   <img class="immg" type="image" src="https://www.angisy.com/wp-content/uploads/2020/03/image-pub5.jpg" >
+                </div>
+                <div class="form-group col-md-8">
+                  <label>File Upload </label>
+                      <input type="file" accept="image/*" (change)="onSelectFile($event)">
+                      <img [src]="imgURL" height="200" *ngIf="imgURL">
                 </div>
                 <div class="form-group col-md-8">
                   <label  >Name</label>

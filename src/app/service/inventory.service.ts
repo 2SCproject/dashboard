@@ -2,12 +2,17 @@ import { Injectable } from '@angular/core';
 import { Product} from '../product';
 import { Category} from '../category';
 import {map} from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { FormBuilder, FormGroup, FormControl, ReactiveFormsModule,Validators } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InventoryService {
+ 
+  public dataForm:  FormGroup; 
+  private baseUrl = 'http://localhost:8081/products/';
 
   constructor(private http: HttpClient) { }
 
@@ -17,7 +22,9 @@ export class InventoryService {
           map(response=>response)
          );
 } 
-
+createData(formData: FormData): Observable<any> {
+  return this.http.post(`${this.baseUrl}`, formData);
+}
 
   getProductById(id:string){
     return this.http.get<Product>("http://localhost:8081/products/"+id)
