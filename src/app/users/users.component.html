@@ -3,7 +3,7 @@
                             
                             <input class="form-control mr-sm-2" type="search" placeholder="Search User" aria-label="Search" name="value"  [(ngModel)]="value" style="background-color: transparent;border-color: black; width: 280px;">
                            <!-- <i class="fa fa-download" style="margin-left:2px;"  type="submit"></i>-->
-                            <button  type="submit" class="btn btnadd " style="background-color: transparent;border-color: black; width: 55px;">ADD</button>
+                            <button  type="submit" class="btn btnadd " style="background-color: transparent;border-color: black; width: 55px;"><i class="fa fa-search"></i></button>
                           </form>
                           
                             <div class="card" style="margin-top:20px ; width: 100%;">
@@ -34,23 +34,40 @@
                                                 
                                             </tr>
                                             <!--(users$ | async)?.someProperty-->
-                                            <tr  *ngFor="let u of users">
+                                            
+                                            <tr  *ngIf="user;else other_content" >
+                                                <td>{{user.username}}</td>
+                                                <td>{{user.email}}</td>
+                                                <td> {{user.adress}}</td>
+                                                <td>{{user.userstate}}</td>
+                                                
+                                                <td>
+                                                    <button type="button" class="btn btn-danger" style="margin-left: 5%;" (click)="OnDeleteUser(user.id)">delete</button> 
+                                                    <button type="button" class="btn btn-warning" style="margin-left: 5%;">banned</button>
+                                                </td>
+                                            </tr>
+                                            
+                                            <ng-template #other_content>
+                                            <tr  *ngFor="let u of users" >
                                                 <td>{{u.username}}</td>
                                                 <td>{{u.email}}</td>
                                                 <td> {{u.adress}}</td>
                                                 <td>{{u.userstate}}</td>
                                                 
                                                 <td>
-                                                    <button type="button" class="btn btn-danger" style="margin-left: 5%;" (click)="OnDeleteCour(u._id)">delete</button> 
+                                                    <button type="button" class="btn btn-danger" style="margin-left: 5%;" (click)="OnDeleteUser(u._id)">delete</button> 
                                                     <button type="button" class="btn btn-warning" style="margin-left: 5%;">banned</button>
                                                 </td>
                                             </tr>
+                                        </ng-template>
 
                                         </tbody>
                                     </table>
                                     
                                 </div>
+                                
                             </div>
+                            
                         
         
   
