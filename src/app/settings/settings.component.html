@@ -1,16 +1,19 @@
-<p>settings works!</p>
 
-<div class="row" id="mag1">
- 
-     <div class="col-6" >
-      <h4>Slidshow information </h4> 
+<div class="container">
+
+<div class="row"><h4 >Slidshow information </h4> </div><br>
+
+<div class="row" >
+  
+     <div  class="col-6" >
+    
       <div id="demo" class="carousel slide" data-ride="carousel">
-      
       <ul class="carousel-indicators">
         <li data-target="#demo" data-slide-to="0" class="active"></li>
         <li data-target="#demo" data-slide-to="1"></li>
         <li data-target="#demo" data-slide-to="2"></li>
       </ul>
+
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="assets/image.png" alt="first slide" width="100%" height="50%">  
@@ -38,22 +41,21 @@
      </div>
 
 
-     <div class="col-4" id="mag2" > 
+     <div class="col-6"  > 
 
-      <form >
+      <form id="form">
         <div class="custom-file" id="customFile">
             <input type="file" class="custom-file-input" id="exampleInputFile" aria-describedby="fileHelp">
             <label class="custom-file-label" for="exampleInputFile">
                 Add new slide
             </label>
         </div>
-        <button id="upload" class="btn btn-default float-right mt-2" type="submit"><span class="fa fa-upload"></span> Upload</button>
-        
-    </form><br><br>
+        <button id="upload" class="btn btn-default float-right mt-2" type="submit"><span class="fa fa-upload"></span> Upload</button>  
+    </form>
 
     <div class="D">
       <h6>Slide title</h6>
-      <button class="edit" type="submit" (click)="edittitle()">edit</button>
+      <button class="edit" type="submit" (click)="edittitle()"><i class="fa fa-pencil"></i></button>
       <h6 *ngIf="val1 ; else notVal1">Title</h6>
       <ng-template #notVal1> 
         <input class="input"  type="text" id="title" name="title">
@@ -64,7 +66,7 @@
 
     <div class="D">
       <h6>Description</h6>
-      <button class="edit" type="submit" (click)="editdescription()">edit</button>
+      <button class="edit" type="submit" (click)="editdescription()"><i class="fa fa-pencil"></i></button>
       <h6 *ngIf="val2 ; else notVal2">Description Description Description Description Description Description Description Description Description Description Description Description Description Description </h6>
       <ng-template #notVal2> 
         <textarea class="input"  type="text" id="descriprion" name="descriprion"></textarea>
@@ -76,19 +78,50 @@
     </div>
 
 
-</div>
+</div> <br>
+
+<div class="row"><h4 > Site information </h4> </div><br>
 
 <div class="row">
 
    <div class="col-6">
-    <h4>Slidshow information</h4>
     <div class="D">
       <h6>Phone number</h6>
-      <button class="edit" type="submit" (click)="edittitle()">edit</button>
-      <h6 *ngIf="val1 ; else notVal1">Title</h6>
-      <ng-template #notVal1> 
-        <input class="input"  type="text" id="title" name="title">
-     <button  (click)="savetitle()" class="btn" >save</button>
+      <button class="edit" type="submit" (click)="editnumber()"><i class="fa fa-pencil"></i></button>
+      <h6 *ngIf="val3 ; else notVal3">01234567</h6>
+      <ng-template #notVal3> 
+        <input class="input"  type="text" id="number" name="number">
+     <button  (click)="savenumber()" class="btn" >save</button>
+      </ng-template>   
+    </div>
+    <br>
+    <div class="D">
+      <h6>Email Adress</h6>
+      <button class="edit" type="submit" (click)="editmail()"><i class="fa fa-pencil"></i></button>
+      <h6 *ngIf="val4 ; else notVal4">Email</h6>
+      <ng-template #notVal4> 
+        <input class="input"  type="text" id="mail" name="mail">
+     <button  (click)="savemail()" class="btn" >save</button>
+      </ng-template>   
+    </div>
+    <br> 
+    <div class="D">
+      <h6>Facebook</h6>
+      <button class="edit" type="submit" (click)="editfb()"><i class="fa fa-pencil"></i></button>
+      <h6 *ngIf="val5 ; else notVal5">Facebook</h6>
+      <ng-template #notVal5> 
+        <input class="input"  type="text" id="fb" name="fb">
+     <button  (click)="savefb()" class="btn" >save</button>
+      </ng-template>   
+    </div>
+    <br> 
+    <div class="D">
+      <h6>Adress</h6>
+      <button class="edit" type="submit" (click)="editadr()"><i class="fa fa-pencil"></i></button>
+      <h6 *ngIf="val6 ; else notVal6">Adress</h6>
+      <ng-template #notVal6> 
+        <input class="input"  type="text" id="adr" name="adr">
+     <button  (click)="saveadr()" class="btn" >save</button>
       </ng-template>   
     </div>
     <br> 
@@ -97,5 +130,7 @@
    <div class="col-4">
      
   </div>
+
+</div>
 
 </div>

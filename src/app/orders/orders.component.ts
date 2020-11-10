@@ -26,6 +26,7 @@ export class OrdersComponent implements OnInit {
     .subscribe(resCours =>this.orders=resCours);
     
   }
+  
   OnSubmitSearchProduct(value){
     console.log("zone");
     this.l.getOrderById(value)
