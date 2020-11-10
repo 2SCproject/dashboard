@@ -22,17 +22,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td> active</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-danger" style="margin-left: 5%;">delete</button> 
-                                                    <button type="button" class="btn btn-warning" style="margin-left: 5%;">banned</button>
-                                                </td>
-                                                
-                                            </tr>
+                    
                                             <!--(users$ | async)?.someProperty-->
                                             
                                             <tr  *ngIf="user;else other_content" >
@@ -55,7 +45,7 @@
                                                 <td>{{u.userstate}}</td>
                                                 
                                                 <td>
-                                                    <button type="button" class="btn btn-danger" style="margin-left: 5%;" (click)="OnDeleteUser(u._id)">delete</button> 
+                                                    <button type="button" class="btn btn-danger" style="margin-left: 5%;" (click)="OnDeleteUser(u)">delete</button> 
                                                     <button type="button" class="btn btn-warning" style="margin-left: 5%;">banned</button>
                                                 </td>
                                             </tr>

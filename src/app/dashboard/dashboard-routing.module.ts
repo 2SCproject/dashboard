@@ -8,7 +8,7 @@ import { EditproductComponent } from '../editproduct/editproduct.component';
 import { SettingsComponent } from '../settings/settings.component';
 import { CategoryComponent } from '../category/category.component';
 import { ProductsComponent } from '../products/products.component';
-import { UsersearchComponent } from '../usersearch/usersearch.component';
+
 import { OrdersearchComponent } from '../ordersearch/ordersearch.component';
 
 

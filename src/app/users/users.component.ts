@@ -21,30 +21,30 @@ export class UsersComponent implements OnInit {
     this.l.getUsers()
     .subscribe(resCours =>this.users=resCours);
   }
-  OnSubmitSearchProduct(value){
-    console.log("zone");
-   // this.l.getUserById(value)
-    //.subscribe((resCours) =>this.users=resCours);
-    
+  OnSubmitSearchProduct(value){    
     //search email
-   // this.l.getUserByEmail (value)
-   // .subscribe((resCours) =>this.user=resCours);
+   console.log(value.value)
+    if(!value.value) this.user=undefined;
+    else{
+    this.l.getUserByEmail(value.value)
+    .subscribe(resCours =>
+      {this.user=resCours});}
     //search user
     console.log(value.value)
     if(!value.value) this.user=undefined;
     else{
     this.l.getUserByUsername(value.value)
     .subscribe(resCours =>
-      {console.log(resCours)
-      this.user=resCours
-      console.log(this.user)
-      
-    });}
+      {this.user=resCours});}
   }
-  OnDeleteUser(id:string){
+  OnDeleteUser(u){
     console.log("deleteeuser")
-    this.l.deleteUser(id)
-    .subscribe(data=>this.users=data);          
+    //this.l.deleteUser(id)
+    //.subscribe(data=>this.users=data); 
+    this.l.deleteUser(u)
+    .subscribe(date=>this.users.splice(u.id,1));
+
+    this.router.navigate(['/users']);         
   }
   
  
