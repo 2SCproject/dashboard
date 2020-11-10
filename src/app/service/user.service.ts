@@ -27,7 +27,7 @@ let options = {
   headers:headers
 }
  console.log("done");http://51333385ec44.ngrok.io/ms_auth/appUsers/
- return this.http.get<User[]>("https://51333385ec44.ngrok.io/ms-auth/aapUsers"+id,options)
+ return this.http.get<User[]>("http://localhost:3000/appUsers"+id,options)
   .pipe(
         map(response=>response)
        );
@@ -35,10 +35,8 @@ let options = {
 getUserByUsername(username:string){
   // return this.http.get<User>("http://localhost:3000/appUsers/"+id)
  
-  return this.http.get<User>("http://localhost:3000/user/"+username)
-   .pipe(
-         map(response=>response)
-        );
+  return this.http.get("http://localhost:3000/user/"+username)
+   
  }
  getUserByEmail(email:string){
   // return this.http.get<User>("http://localhost:3000/appUsers/"+id)

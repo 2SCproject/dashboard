@@ -23,18 +23,25 @@ export class UsersComponent implements OnInit {
   }
   OnSubmitSearchProduct(value){
     console.log("zone");
-    this.l.getUserById(value)
-    .subscribe((resCours) =>this.users=resCours);
+   // this.l.getUserById(value)
+    //.subscribe((resCours) =>this.users=resCours);
     
     //search email
    // this.l.getUserByEmail (value)
    // .subscribe((resCours) =>this.user=resCours);
     //search user
-   // this.l.getUserByUsername (value)
-   // .subscribe((resCours) =>this.user=resCours);
-  
+    console.log(value.value)
+    if(!value.value) this.user=undefined;
+    else{
+    this.l.getUserByUsername(value.value)
+    .subscribe(resCours =>
+      {console.log(resCours)
+      this.user=resCours
+      console.log(this.user)
+      
+    });}
   }
-  OnDeleteCour(id:string){
+  OnDeleteUser(id:string){
     console.log("deleteeuser")
     this.l.deleteUser(id)
     .subscribe(data=>this.users=data);          
