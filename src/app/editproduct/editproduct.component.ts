@@ -17,20 +17,34 @@ export class EditproductComponent implements OnInit {
   public d;
   public q;
   public n;
+  prod
 
   constructor(private route:ActivatedRoute,private router:Router, private s:InventoryService) { }
   products=[];
   ngOnInit():void {
     var id=this.route.snapshot.paramMap.get('id');
+    
     this.productId=id;
+    console.log(this.productId)
     this.s.getProductById(id)
-    .subscribe(res => {this.p=res.price;this.d=res.descreption;this.q=res.quantity;this.n=res.name }
-      );
+    .subscribe(res=>{
+      console.log(res)
+      this.prod=res
+      
+      this.d=this.prod.descreption
+      this.n=this.prod.name
+      this.p=this.prod.price
+      this.q=this.prod.quantity
+      
+    })
   }
+      
+  
 
   OnSubmitSaveProduct(product:any){
-    product._id=this.productId,
-    this.s.UpdateProduct(product).subscribe(res=>{
+
+   console.log(product)
+    this.s.UpdateProduct(this.productId,product).subscribe(res=>{
       product=res;
       this.router.navigate(['/products']);
     })

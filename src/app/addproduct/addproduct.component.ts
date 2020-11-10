@@ -26,11 +26,6 @@ export class AddproductComponent implements OnInit {
   imgURL: any;
 
   ngOnInit() {
-    var id=this.route.snapshot.paramMap.get('id');
-    this.productId=id;
-    this.s.getProductById(id)
-    .subscribe(res => {this.p=res.price;this.d=res.descreption;this.n=res.name ;this.q=res.quantity}
-      );
 
   }
 

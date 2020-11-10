@@ -12,12 +12,12 @@ import { FormBuilder, FormGroup, FormControl, ReactiveFormsModule,Validators } f
 export class InventoryService {
  
   public dataForm:  FormGroup; 
-  private baseUrl = 'http://localhost:8081/products/';
+  private baseUrl = ' https://81b9b6d81d55.ngrok.io/products/';
 
   constructor(private http: HttpClient) { }
 
   getCategoryById(id:string){
-    return this.http.get<Category>("http://localhost:8081/categories/"+id)
+    return this.http.get<Category>(" https://81b9b6d81d55.ngrok.io/categories/"+id)
     .pipe(
           map(response=>response)
          );
@@ -27,7 +27,7 @@ createData(formData: FormData): Observable<any> {
 }
 
   getProductById(id:string){
-    return this.http.get<Product>("https://4acb6b1b8dbf.ngrok.io/ms-inventory/products/"+id)
+    return this.http.get(" https://81b9b6d81d55.ngrok.io/products/"+id)
     .pipe(
           map(response=>response)
          );
@@ -35,7 +35,7 @@ createData(formData: FormData): Observable<any> {
 
 
 
-  UpdateProduct(product:Product){
+  UpdateProduct(productId,product){
     console.log(JSON.stringify(product));
     let headers = new HttpHeaders({
       'Content-Type':'application/json'
@@ -43,7 +43,9 @@ createData(formData: FormData): Observable<any> {
     let options={
       headers:headers
     }
-    return this.http.put("https://4acb6b1b8dbf.ngrok.io/ms-inventory/products"+product.idProduct,JSON.stringify(product),options)
+
+    console.log(productId)
+    return this.http.put("https://81b9b6d81d55.ngrok.io/products/"+productId,JSON.stringify(product),options)
     .pipe(
       map(response=>response)
     );
@@ -57,7 +59,7 @@ createData(formData: FormData): Observable<any> {
     let options = {
       headers: headers
     }
-    return this.http.post<Product[]>("https://4acb6b1b8dbf.ngrok.io/ms-inventory/products",JSON.stringify(product),options)
+    return this.http.post<Product[]>(" https://81b9b6d81d55.ngrok.io/products",JSON.stringify(product),options)
     .pipe(
       map(response=>response)
     );
@@ -65,7 +67,7 @@ createData(formData: FormData): Observable<any> {
 
 
 
-  addCategory(category:Category){
+  addCategory(category){
     console.log(JSON.stringify(category));
     let headers = new HttpHeaders({
       'Content-Type':'application/json'
@@ -73,20 +75,18 @@ createData(formData: FormData): Observable<any> {
     let options = {
       headers: headers
     }
-    return this.http.post<Category[]>("http://localhost:8081/categories",JSON.stringify(category),options)
-    .pipe(
-      map(response=>response)
-    );
+
+    let categ={"name":category}
+    return this.http.post(" https://81b9b6d81d55.ngrok.io/category",JSON.stringify(categ),options)
+    
   }
 
   getCategories(){
-    return this.http.get<Category[]>("http://localhost:8081/categories").pipe(
-      map(response=>response['_embedded'].categories)
-    );
+    return this.http.get<Category[]>(" https://81b9b6d81d55.ngrok.io/categories")
   }
 
   getProducts(){
-    return this.http.get<Product[]>("https://c73e8d53f16e.ngrok.io/ms-inventory/products").pipe(
+    return this.http.get<Product[]>(" https://81b9b6d81d55.ngrok.io/products").pipe(
       map(response=>response['_embedded'].products)
     );
   }
@@ -94,30 +94,31 @@ createData(formData: FormData): Observable<any> {
   
   deleteProduct(product:Product){
     console.log(JSON.stringify(product));
-    let headers= new HttpHeaders ({
-        'Content-Type': 'application/json',
-    });
-    let options = {
-        headers:headers
-    }
-    return this.http.delete<Product[]>("https://c73e8d53f16e.ngrok.io/ms-inventory/products/"+product.idProduct,options)
-    .pipe(
-        map(response=>response)
-    ); 
+    
+    return this.http.delete(" https://81b9b6d81d55.ngrok.io/products/"+product.idProduct)
+    
 }
 
-
-
-}
-
-
-
-interface categories{
-  _embedded:{
-    appUsers:Category[];
-    _links:{self:{href:string}};
+deleteCategory(category){
+  let url = "https://81b9b6d81d55.ngrok.io/category/"+category;
+  console.log(url)
+  let headers= new HttpHeaders ({
+      'Content-Type': 'application/json',
+  });
+  let options = {
+      headers:headers
   }
+  return this.http.delete(url,options)
+ 
 }
+
+
+
+}
+
+
+
+
 
 interface products{
   _embedded:{

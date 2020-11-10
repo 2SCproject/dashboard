@@ -19,15 +19,12 @@ export class ProductsComponent implements OnInit {
 
   OnDeleteProduct(p){
     this.s.deleteProduct(p)
-    .subscribe(date=>this.products.splice(p._id,1));
+    .subscribe(date=>this.products.splice(p.idProduct,1));
 
     this.router.navigate(['/products']);
              
   }
 
-  OnUpdateProduct(p){
-    console.log(p.idProduct);
-    this.router.navigate(['/product',p.idProduct])
-  }
+  
 
 }

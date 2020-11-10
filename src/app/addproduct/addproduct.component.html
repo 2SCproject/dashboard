@@ -1,7 +1,7 @@
 <div class="container-fluid" style=" background-color: #EBEBEB;">
 
   <div class="col-md-12">
-         <form  class="login " style="margin:5%" #myform="ngForm" (ngSubmit)="onSubmit() ">
+         <form  class="login " style="margin:5%" #myform="ngForm" (ngSubmit)="OnSubmitAddProduct(myform.value) ">
              <h3 >Product Details</h3>
              <hr style="border-color:crimson;">
              <div class="form-row" style="padding-bottom: 73px;">
@@ -29,7 +29,11 @@
                </div>
                <div class="form-group col-md-8">
                 <label  >Qauntity</label>
-                <input type="text" name="quantity" class="form-control" id="inputquantity" placeholder="Qauntity of the produc" [(ngModel)]="q" #quantity="ngModel"  >
+                <input type="text" name="quantity" class="form-control" id="inputquantity" placeholder="Qauntity of the product" [(ngModel)]="q" #quantity="ngModel"  >
+              </div>
+              <div class="form-group col-md-8">
+                <label  >Category</label>
+                <input type="text" name="category" class="form-control" id="inputcategory" placeholder="name of category" [(ngModel)]="c" #category="ngModel"  >
               </div>
               
               <br>

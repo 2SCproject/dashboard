@@ -15,6 +15,7 @@ export class CategoryComponent implements OnInit {
   public cn;
 
   categories=[];
+  
 
  
 
@@ -29,16 +30,29 @@ export class CategoryComponent implements OnInit {
 
 
 
-    this.s.getCategories().subscribe(resCategories => this.categories=resCategories);
+    this.s.getCategories().subscribe(resCategories =>{
+      console.log(resCategories)
+     this.categories=resCategories
+    });
   }
 
   OnSubmitAddCategory(category:Category){
-    console.log("avant");
+   console.log(category)
     this.s.addCategory(category)
-                 .subscribe(resnextCategory=>this.categories.push(resnextCategory));
-                 console.log("apres");
+                 .subscribe(resnextCategory=>{this.categories.push(resnextCategory)
+                  console.log(resnextCategory)});
+    
                  this.router.navigate(['/categories']);
                 
    }
+
+   OnDeleteCategory(c){
+     console.log(c)
+    this.s.deleteCategory(c)
+    .subscribe(date=>this.categories.splice(c.idCategory,1));
+
+    this.router.navigate(['/categories']);
+             
+  }
 
 }
