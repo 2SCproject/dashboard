@@ -26,7 +26,7 @@ getUserById(id:string){
 let options = {
   headers:headers
 }
- console.log("done");http://51333385ec44.ngrok.io/ms_auth/appUsers/
+ console.log("done");
  return this.http.get<User[]>("http://localhost:3000/appUsers"+id,options)
   .pipe(
         map(response=>response)
