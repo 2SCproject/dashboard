@@ -32,9 +32,10 @@ export class CategoryComponent implements OnInit {
     this.s.getCategories().subscribe(resCategories => this.categories=resCategories);
   }
 
-  OnSubmitAddCategory(category:Category){
+  OnSubmitAddCategory(category){
     console.log("avant");
-    this.s.addCategory(category)
+    console.log(this.cn)
+    this.s.addCategory(this.cn)
                  .subscribe(resnextCategory=>this.categories.push(resnextCategory));
                  console.log("apres");
                  this.router.navigate(['/categories']);

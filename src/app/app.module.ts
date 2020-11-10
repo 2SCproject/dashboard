@@ -1,6 +1,7 @@
+import { AddproductComponent } from './addproduct/addproduct.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardModule } from './dashboard/dashboard.module';
@@ -23,8 +24,6 @@ import { ProductsComponent } from './products/products.component';
     AppComponent,
     SettingsComponent,
     ProductsComponent,
-   
-    
     
   ],
   imports: [
@@ -32,7 +31,10 @@ import { ProductsComponent } from './products/products.component';
     BrowserModule,
     AppRoutingModule,
     DashboardModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
+
+
   ],
   providers: [UserService,OrderService,InventoryService],
   bootstrap: [AppComponent]

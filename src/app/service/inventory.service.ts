@@ -65,18 +65,15 @@ createData(formData: FormData): Observable<any> {
 
 
 
-  addCategory(category:Category){
-    console.log(JSON.stringify(category));
+  addCategory(category){
+    let cate={"name":category}
     let headers = new HttpHeaders({
       'Content-Type':'application/json'
     });
     let options = {
       headers: headers
     }
-    return this.http.post<Category[]>("http://localhost:8081/categories",JSON.stringify(category),options)
-    .pipe(
-      map(response=>response)
-    );
+    return this.http.post("http://localhost:8081/categories",cate,options)
   }
 
   getCategories(){

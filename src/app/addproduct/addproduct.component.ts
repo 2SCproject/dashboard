@@ -1,3 +1,5 @@
+import { ProductService } from './../service/product.service';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Component, OnInit, ɵConsole } from '@angular/core';
 import {Router} from '@angular/router';
 import {InventoryService} from '../service/inventory.service';
@@ -12,15 +14,25 @@ import { Product } from '../product';
 })
 export class AddproductComponent implements OnInit {
 
+  reactiveForm : any = FormGroup;
+  public userFile : any =File
+
   public productId;
   public p;
   public d;
   public q;
   public n;
 
-  constructor(private route:ActivatedRoute,private router:Router, private s:InventoryService) { }
+  constructor(private route:ActivatedRoute,private router:Router, private s:InventoryService,private fb :FormBuilder,private productService: ProductService) {
+    this.reactiveForm = this.fb.group({
+      name : new FormControl(''),
+      price : new FormControl(''),
+      quantity: new FormControl(''),
+      descreption : new FormControl('')
+    })
+
+   }
   products=[];
-  userFile ;
   public message: string;
   public imagePath;
   imgURL: any;
@@ -46,6 +58,7 @@ export class AddproductComponent implements OnInit {
   onSubmit() {
       this.addData();    
     }
+
    addData() {
   const formData = new  FormData();
   const product = this.s.dataForm.value;
@@ -56,29 +69,26 @@ export class AddproductComponent implements OnInit {
     this.router.navigate(['/products']);
   });
 }
-   onSelectFile(event) {
-    if (event.target.files.length > 0)
-    {
-      const file = event.target.files[0];
-      this.userFile = file;
-     // this.f['profile'].setValue(file);
- 
-    var mimeType = event.target.files[0].type;
-    if (mimeType.match(/image\/*/) == null) {
-      this.message = "Only images are supported.";
-      console.log("image only");
-      return;
-      
-    }
- 
-    var reader = new FileReader();
-    
-    this.imagePath = file;
-    reader.readAsDataURL(file); 
-    reader.onload = (_event) => { 
-      this.imgURL = reader.result; 
-    }
+
+
+saveForm(submitForm:FormGroup){
+  const product =submitForm.value
   
-  }}
+  const formData = new FormData()
+  formData.append('product',product)
+  formData.append('file',this.userFile)
+  
+  this.productService.saveProduct({'product':product,'file':this.userFile}).subscribe(res=>{
+    console.log(res)
+  });
+}
+
+onSelectFile(event) {
+    const file = event.target.files[0]
+    this.userFile
+    console.log(event.target.files[0])
+}
 
 }
+
+
