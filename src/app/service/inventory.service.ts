@@ -27,7 +27,7 @@ createData(formData: FormData): Observable<any> {
 }
 
   getProductById(id:string){
-    return this.http.get<Product>("http://localhost:8081/products/"+id)
+    return this.http.get<Product>("https://4acb6b1b8dbf.ngrok.io/ms-inventory/products/"+id)
     .pipe(
           map(response=>response)
          );
@@ -43,7 +43,7 @@ createData(formData: FormData): Observable<any> {
     let options={
       headers:headers
     }
-    return this.http.put("http://localhost:8081/products"+product.idProduct,JSON.stringify(product),options)
+    return this.http.put("https://4acb6b1b8dbf.ngrok.io/ms-inventory/products"+product.idProduct,JSON.stringify(product),options)
     .pipe(
       map(response=>response)
     );
@@ -57,7 +57,7 @@ createData(formData: FormData): Observable<any> {
     let options = {
       headers: headers
     }
-    return this.http.post<Product[]>("http://localhost:8081/products",JSON.stringify(product),options)
+    return this.http.post<Product[]>("https://4acb6b1b8dbf.ngrok.io/ms-inventory/products",JSON.stringify(product),options)
     .pipe(
       map(response=>response)
     );
@@ -86,7 +86,7 @@ createData(formData: FormData): Observable<any> {
   }
 
   getProducts(){
-    return this.http.get<Product[]>("http://localhost:8081/products").pipe(
+    return this.http.get<Product[]>("https://c73e8d53f16e.ngrok.io/ms-inventory/products").pipe(
       map(response=>response['_embedded'].products)
     );
   }
@@ -100,7 +100,7 @@ createData(formData: FormData): Observable<any> {
     let options = {
         headers:headers
     }
-    return this.http.delete<Product[]>("http://localhost:8081/products/"+product.idProduct,options)
+    return this.http.delete<Product[]>("https://c73e8d53f16e.ngrok.io/ms-inventory/products/"+product.idProduct,options)
     .pipe(
         map(response=>response)
     ); 

@@ -27,6 +27,7 @@ export class OrdersComponent implements OnInit {
     .subscribe(resCours =>this.orders=resCours);
     
   }
+  
   OnSubmitSearchProduct(value){
     console.log(value.value);
     if(value.value!=undefined)
