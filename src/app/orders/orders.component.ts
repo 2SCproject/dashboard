@@ -15,6 +15,7 @@ import {OrderService} from '../service/order.service';
 export class OrdersComponent implements OnInit {
  
   orders:Array<Order>;
+  userorders;
   value:string;
   
   constructor(private router:Router,  private l:OrderService,){}
@@ -28,8 +29,25 @@ export class OrdersComponent implements OnInit {
   }
   
   OnSubmitSearchProduct(value){
-    console.log("zone");
-    this.l.getOrderById(value)
-    .subscribe((resCours) =>this.orders=resCours);}
+    console.log(value.value);
+    if(value.value!=undefined)
+    this.orders=this.l.getOrderByUsername(this.orders,value.value)
+    console.log(value.value)
+    if(value.value==""){
+    this.l.getOrders()
+    .subscribe(resCours =>this.orders=resCours);
+    }
+  }
+  //delete order
+    OnDeleteOrder(o){
+      console.log("deleteeuser")
+      //this.l.deleteUser(id)
+      //.subscribe(data=>this.users=data); 
+      this.l.deleteOrder(o)
+      .subscribe(date=>this.orders.splice(o.id,1));
+  
+      this.router.navigate(['/orders']);         
+    }
 }
+
 

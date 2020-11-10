@@ -1,5 +1,5 @@
 export class Order {
-    _id:string;
+    id:string;
     date?: Date;
     orderstatus?:string;
     cart?:string;

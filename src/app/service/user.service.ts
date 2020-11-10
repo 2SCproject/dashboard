@@ -26,7 +26,7 @@ getUserById(id:string){
 let options = {
   headers:headers
 }
- console.log("done");http://51333385ec44.ngrok.io/ms_auth/appUsers/
+ console.log("done");
  return this.http.get<User[]>("http://localhost:3000/appUsers"+id,options)
   .pipe(
         map(response=>response)
@@ -38,22 +38,17 @@ getUserByUsername(username:string){
   return this.http.get("http://localhost:3000/user/"+username)
    
  }
+
+
+
  getUserByEmail(email:string){
   // return this.http.get<User>("http://localhost:3000/appUsers/"+id)
-  let headers= new HttpHeaders ({
-    'Content-Type': 'application/json',
-});
-let options = {
-    headers:headers
-}
  
-  return this.http.get<User>("http://localhost:3000/user/email"+email,options)
-   .pipe(
-         map(response=>response)
-        );
+  return this.http.get("http://localhost:3000/user/email/"+email)
+  
  }
    //delete enseignat cour
-   deleteUser(id:string){
+   deleteUser(user:User){
     console.log("delete");
     let headers= new HttpHeaders ({
         'Content-Type': 'application/json',
@@ -61,12 +56,11 @@ let options = {
     let options = {
         headers:headers
     }
-    return this.http.delete<User[]>("http://localhost:3000/appUsers/"+id,options)
+    return this.http.delete("http://localhost:3000/appUsers/"+user.id,options)
     .pipe(
         map(response=>response['_embedded'].appUsers)
     ); 
 }
-
 }
 interface appUsers{
   _embedded:{

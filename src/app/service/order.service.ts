@@ -14,27 +14,35 @@ export class OrderService {
 
   getOrders(){
     console.log("yORDER")
-    return this.http.get<Order[]>("http://localhost:9000/userorders")
-    .pipe(
-          map(response=>response['_embedded'].userorders)
-         );
+    return this.http.get<Order[]>("http://localhost:9000/allorders")
+   
 }
 /////orders by id
 getOrderById(id:string){
-  let headers= new HttpHeaders ({
-   'Content-Type': 'application/json',
- });
- let options = {
-   headers:headers
- }
-  console.log("done");
-  return this.http.get<Order[]>("http://localhost:9000/order/"+id,options)
-   .pipe(
-         map(response=>response)
-        );
- }
 
- 
+  console.log("done");
+  return this.http.get<Order[]>("http://localhost:9000/order/"+id)
+   
+ }
+ getOrderByUsername(orders,username){
+  console.log(orders)
+  let ordus = orders.filter(ord => ord.appuser.username == username)
+  return ordus
+
+ }
+ deleteOrder(order:Order){
+  console.log("delete");
+  let headers= new HttpHeaders ({
+      'Content-Type': 'application/json',
+  });
+  let options = {
+      headers:headers
+  }
+  return this.http.delete("http://localhost:9000/userorders/"+order.id,options)
+  .pipe(
+      map(response=>response['_embedded'].appUsers)
+  ); 
+}
 
 }
 interface userorders{
