@@ -15,20 +15,40 @@ import {OrderService} from '../service/order.service';
 export class OrdersComponent implements OnInit {
  
   orders:Array<Order>;
+  userorders;
   value:string;
   
   constructor(private router:Router,  private l:OrderService,){}
 
   ngOnInit() {
-    
-    
+    console.log("ff")
     this.l.getOrders()
     .subscribe(resCours =>this.orders=resCours);
     
   }
+  
   OnSubmitSearchProduct(value){
-    console.log("zone");
-    this.l.getOrderById(value)
-    .subscribe((resCours) =>this.orders=resCours);}
+    console.log(value.value);
+    if(value.value!=undefined)
+    this.orders=this.l.getOrderByUsername(this.orders,value.value)
+    console.log(value.value)
+    if(value.value==""){
+    this.l.getOrders()
+    .subscribe(resCours =>this.orders=resCours);
+    }
+  }
+  //delete order
+    OnDeleteOrder(o){ 
+      this.l.deleteOrder(o)
+      .subscribe();
+      window.location.reload();        
+    }
+
+    onDelevred(o){
+      this.l.updateOrder(o)
+      .subscribe();
+      window.location.reload(); 
+    }
 }
+
 

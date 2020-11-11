@@ -13,36 +13,26 @@
                                     <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                         <thead>
                                             <tr>
-                                                <th>Username</th>
-                                                <th>Email</th>
-                                                <th>Adress</th>
-                                                <th>User State</th>
+                                                <th>User Name</th>
+                                                <th>Date</th>
+                                        
+                                                <th>order Status</th>
                                                 <th>Managed</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td> active</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-danger" style="margin-left: 5%;">delete</button> 
-                                                    <button type="button" class="btn btn-warning" style="margin-left: 5%;">banned</button>
-                                                </td>
-                                                
-                                            </tr>
+                                    
                                             <!--(users$ | async)?.someProperty-->
                                             <tr  *ngFor="let o of orders">
-                                                <td>{{o.id}}</td>
+                                                <td>{{o.appuser.username}}</td>
                                                 <td>{{o.date}}</td>
                                                 <td>{{o.orderstatus}}</td>
-                                                <td>{{o.cart}}</td>
+                                                
                                                 
                                                 
                                                 <td>
-                                                    <button type="button" class="btn btn-danger" style="margin-left: 5%;">delete</button> 
-                                                    <button type="button" class="btn btn-warning" style="margin-left: 5%;">banned</button>
+                                                    <button type="button" class="btn btn-danger" style="margin-left: 5%;" (click)="OnDeleteOrder(o)">delete</button> 
+                                                    <button type="button" class="btn btn-warning" style="margin-left: 5%;" (click)="onDelevred(o)" *ngIf="o.orderstatus!='Delivred' " >Delivred</button>
                                                 </td>
                                             </tr>
                                         </tbody>

@@ -34,11 +34,17 @@
     transition: 100ms;
 }
 
+.fa-pencil{
+  color: coral;
+}
+
 .img:hover .acts{
   right: 15px;
   color:coral;
 
 }
+
+
 
 .img:hover .product {
   background-color: #FCFBF1;

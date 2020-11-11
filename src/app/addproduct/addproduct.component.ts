@@ -22,6 +22,7 @@ export class AddproductComponent implements OnInit {
   public d;
   public q;
   public n;
+  public c;
 
   constructor(private route:ActivatedRoute,private router:Router, private s:InventoryService,private fb :FormBuilder,private productService: ProductService) {
     this.reactiveForm = this.fb.group({
@@ -38,20 +39,13 @@ export class AddproductComponent implements OnInit {
   imgURL: any;
 
   ngOnInit() {
-    var id=this.route.snapshot.paramMap.get('id');
-    this.productId=id;
-    this.s.getProductById(id)
-    .subscribe(res => {this.p=res.price;this.d=res.descreption;this.n=res.name ;this.q=res.quantity}
-      );
 
   }
 
-  OnSubmitAddProduct(product:Product){
-    console.log("ggg");
-    
-    this.s.addProduct(product)
+  saveProduct(){
+    let product ={"name":this.n,"price":this.p,"descreption":this.d,"quantity":this.q}
+    this.s.addProduct(product,this.c)
                  .subscribe(resnextProduct=>this.products.push(resnextProduct));
-                 this.router.navigate(['/products']);
                  console.log(product)
                 
    }

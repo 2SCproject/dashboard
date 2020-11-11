@@ -16,30 +16,20 @@
                                             <tr>
                                                 <th>Username</th>
                                                 <th>Email</th>
-                                                <th>Adress</th>
-                                                <th>User State</th>
-                                                <th>Managed</th>
+                                                <th>Last Name</th>
+                                                <th>Phone Number</th>
+                                                <th>User Manage</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td> active</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-danger" style="margin-left: 5%;">delete</button> 
-                                                    <button type="button" class="btn btn-warning" style="margin-left: 5%;">banned</button>
-                                                </td>
-                                                
-                                            </tr>
+                    
                                             <!--(users$ | async)?.someProperty-->
                                             
                                             <tr  *ngIf="user;else other_content" >
                                                 <td>{{user.username}}</td>
                                                 <td>{{user.email}}</td>
-                                                <td> {{user.adress}}</td>
-                                                <td>{{user.userstate}}</td>
+                                                <td> {{user.lastname}}</td>
+                                                <td>{{user.phonenumber}}</td>
                                                 
                                                 <td>
                                                     <button type="button" class="btn btn-danger" style="margin-left: 5%;" (click)="OnDeleteUser(user.id)">delete</button> 
@@ -51,11 +41,11 @@
                                             <tr  *ngFor="let u of users" >
                                                 <td>{{u.username}}</td>
                                                 <td>{{u.email}}</td>
-                                                <td> {{u.adress}}</td>
-                                                <td>{{u.userstate}}</td>
+                                                <td> {{u.lastname}}</td>
+                                                <td>{{u.phonenumber}}</td>
                                                 
                                                 <td>
-                                                    <button type="button" class="btn btn-danger" style="margin-left: 5%;" (click)="OnDeleteUser(u._id)">delete</button> 
+                                                    <button type="button" class="btn btn-danger" style="margin-left: 5%;" (click)="OnDeleteUser(u)">delete</button> 
                                                     <button type="button" class="btn btn-warning" style="margin-left: 5%;">banned</button>
                                                 </td>
                                             </tr>

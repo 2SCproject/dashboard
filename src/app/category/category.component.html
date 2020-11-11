@@ -21,7 +21,7 @@
           <input type="text" name="name"  id="inputname" placeholder="" [(ngModel)]="cn" #name="ngModel"  >
         </div>
         <div class="modal-footer">
-          <button id="savec" type="submit" class="btn" (click)="OnSubmitAddCategory(cn.value) "> Save</button>
+          <button id="savec" type="submit" class="btn" (click)="OnSubmitAddCategory(cn) "> Save</button>
         </div>
       </div>
       
@@ -34,9 +34,32 @@
        <h4 class="pt-3"> {{c.name}}</h4>
        <div class="acts">
         <i class="fa fa-pencil"></i> &nbsp;
-        <i class="fa fa-trash"></i>
+        <i class="fa fa-trash" data-toggle="modal" data-target="#myModal2"></i>
        </div>
+
+       <div class="modal fade" id="myModal2" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          
+         
+          <div class="modal-body">
+            <h4 > are you sure ?</h4>
+          </div>
+          <div class="modal-footer">
+            <button id="delete" type="submit" class="btn" (click)="OnDeleteCategory(c.idCategory)">delete</button>
+          </div>
+        </div>
+        
+      </div>
      </div>
+
+     
+    </div>
+
+     
+     
     
     
     

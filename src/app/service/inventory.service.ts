@@ -12,7 +12,7 @@ import { FormBuilder, FormGroup, FormControl, ReactiveFormsModule,Validators } f
 export class InventoryService {
  
   public dataForm:  FormGroup; 
-  private baseUrl = 'http://localhost:8081/products/';
+  private baseUrl = ' http://localhost:8081/products/';
 
   constructor(private http: HttpClient) { }
 
@@ -27,7 +27,7 @@ createData(formData: FormData): Observable<any> {
 }
 
   getProductById(id:string){
-    return this.http.get<Product>("http://localhost:8081/products/"+id)
+    return this.http.get(" http://localhost:8081/products/"+id)
     .pipe(
           map(response=>response)
          );
@@ -35,7 +35,7 @@ createData(formData: FormData): Observable<any> {
 
 
 
-  UpdateProduct(product:Product){
+  UpdateProduct(productId,product){
     console.log(JSON.stringify(product));
     let headers = new HttpHeaders({
       'Content-Type':'application/json'
@@ -43,13 +43,15 @@ createData(formData: FormData): Observable<any> {
     let options={
       headers:headers
     }
-    return this.http.put("http://localhost:8081/products"+product.idProduct,JSON.stringify(product),options)
+
+    console.log(productId)
+    return this.http.put("http://localhost:8081/products/"+productId,JSON.stringify(product),options)
     .pipe(
       map(response=>response)
     );
   }
 
-  addProduct(product:Product){
+  addProduct(product,c){
     console.log(JSON.stringify(product));
     let headers = new HttpHeaders({
       'Content-Type':'application/json'
@@ -57,7 +59,7 @@ createData(formData: FormData): Observable<any> {
     let options = {
       headers: headers
     }
-    return this.http.post<Product[]>("http://localhost:8081/products",JSON.stringify(product),options)
+    return this.http.post<Product[]>("http://localhost:8081/product/"+c,JSON.stringify(product),options)
     .pipe(
       map(response=>response)
     );
@@ -77,13 +79,13 @@ createData(formData: FormData): Observable<any> {
   }
 
   getCategories(){
-    return this.http.get<Category[]>("http://localhost:8081/categories").pipe(
+    return this.http.get<Category[]>(" http://localhost:8081/categories").pipe(
       map(response=>response['_embedded'].categories)
     );
   }
 
   getProducts(){
-    return this.http.get<Product[]>("http://localhost:8081/products").pipe(
+    return this.http.get<Product[]>(" http://localhost:8081/products").pipe(
       map(response=>response['_embedded'].products)
     );
   }
@@ -91,30 +93,31 @@ createData(formData: FormData): Observable<any> {
   
   deleteProduct(product:Product){
     console.log(JSON.stringify(product));
-    let headers= new HttpHeaders ({
-        'Content-Type': 'application/json',
-    });
-    let options = {
-        headers:headers
-    }
-    return this.http.delete<Product[]>("http://localhost:8081/products/"+product.idProduct,options)
-    .pipe(
-        map(response=>response)
-    ); 
+    
+    return this.http.delete("http://localhost:8081/products/"+product.idProduct)
+    
 }
 
-
-
-}
-
-
-
-interface categories{
-  _embedded:{
-    appUsers:Category[];
-    _links:{self:{href:string}};
+deleteCategory(category){
+  let url = "http://localhost:8081/categories/"+category;
+  console.log(url)
+  let headers= new HttpHeaders ({
+      'Content-Type': 'application/json',
+  });
+  let options = {
+      headers:headers
   }
+  return this.http.delete(url,options)
+ 
 }
+
+
+
+}
+
+
+
+
 
 interface products{
   _embedded:{

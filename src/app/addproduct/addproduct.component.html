@@ -1,7 +1,7 @@
 <div class="container-fluid" style=" background-color: #EBEBEB;">
 
   <div class="col-md-12">
-         <form  class="login " style="margin:5%" [formGroup]="reactiveForm" method="post" enctype="multipart/form-data" >
+         <form  class="login " style="margin:5%" >
              <h3 >Product Details</h3>
              <hr style="border-color:crimson;">
              <div class="form-row" style="padding-bottom: 73px;">
@@ -14,34 +14,38 @@
 
                 <div class="form-group col-md-8">
                   <label>File Upload </label>
-                      <input type="file" accept="image/*" (change)="onSelectFile($event)">
+                      <input type="file" accept="image/*" >
                       <img [src]="imgURL" height="200" *ngIf="imgURL">
                 </div>
 
                 <div class="form-group col-md-8">
                   <label  >Name</label>
-                  <input type="text" name="name" class="form-control" id="inputname" placeholder="" formControlName="name"  required >
+                  <input type="text" name="name" class="form-control" id="inputname" placeholder="" [(ngModel)]="n" required >
                 </div>
 
                <div class="form-group  col-md-8 ">
                  <label >Price</label>
-                 <input type="text" name="price" class="form-control" id="inputprice" placeholder="Price of the product"  formControlName="price"  >
+                 <input type="text" name="price" class="form-control" id="inputprice" placeholder="Price of the product"  [(ngModel)]="p"  >
                </div>
 
                <div class="form-group col-md-8">
                  <label for="inputPassword4" >Description</label>
-                 <textarea rows="4" cols="50" name="descreption" class="form-control" id="inputdescreption" placeholder="Descreption of the product" formControlName="descreption" ></textarea>
+                 <textarea rows="4" cols="50"name="description"   class="form-control" id="inputdescreption" placeholder="Descreption of the product" [(ngModel)]="d"  ></textarea>
                </div>
 
                <div class="form-group col-md-8">
                 <label  >Qauntity</label>
-                <input type="text" name="quantity" class="form-control" id="inputquantity" placeholder="Qauntity of the produc" formControlName="quantity"  >
+                <input type="text"  name="quantity" class="form-control" id="inputquantity" placeholder="Qauntity of the product" [(ngModel)]="q"   >
+              </div>
+              <div class="form-group col-md-8">
+                <label  >Category</label>
+                <input type="text" name="category" class="form-control" id="inputcategory" placeholder="name of category" [(ngModel)]="c"   >
               </div>
               
               <br>
               <div class="col-md-4"></div>
               <div class="col-md-6"></div>
-             <button  type="submit" class="btn btnadd col-md-2 " (click)="saveForm(reactiveForm)">Save</button>
+             <button  type="submit" class="btn btnadd col-md-2 " (click)="saveProduct()" >Save</button>
              </div>
          </form>
 
